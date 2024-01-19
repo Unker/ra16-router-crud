@@ -1,0 +1,41 @@
+.home-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.create-post-link {
+  display: block;
+  margin-bottom: 20px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.post-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.post-details p {
+  margin: 5px 0;
+}
+
+.view-post-link {
+  color: #27ae60;
+  text-decoration: none;
+  font-weight: bold;
+}
