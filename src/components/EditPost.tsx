@@ -7,7 +7,7 @@ interface EditPostProps {
   onSave: (newContent: string) => void;
 }
 
-const EditPost: React.FC<EditPostProps> = ({ postId, initialContent, onCancel, onSave }) => {
+const EditPost: React.FC<EditPostProps> = ({ initialContent, onCancel, onSave }) => {
   const [editedContent, setEditedContent] = useState(initialContent);
 
   const handleSave = () => {

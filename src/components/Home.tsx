@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                 <p>{`ID: ${post.id}`}</p>
                 <p>{`Содержание: ${post.content}`}</p>
                 <p>{`Дата создания: ${formatTimestamp(post.created)}`}</p>
-                <Link to={`/posts/${post.id}`} className="view-post-link">
+                <Link to={`/posts/${post.id}`} className="view-post-button">
                   Просмотреть пост
                 </Link>
               </div>

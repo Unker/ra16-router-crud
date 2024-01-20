@@ -44,10 +44,22 @@
   margin: 5px 0;
 }
 
-.view-post-link {
-  color: #27ae60;
+.view-post-button {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-post-button:hover {
+  background-color: #229a54;
+  color: #fff;
 }
 
 .placeholder-post {
