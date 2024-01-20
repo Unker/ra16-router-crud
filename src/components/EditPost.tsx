@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './EditPost.css';
 
 interface EditPostProps {
   postId: number;
@@ -23,8 +24,8 @@ const EditPost: React.FC<EditPostProps> = ({ initialContent, onCancel, onSave })
         placeholder="Введите текст поста..."
       />
       <div>
-        <button onClick={handleSave}>Сохранить</button>
-        <button onClick={onCancel}>Отмена</button>
+        <button className='save-button' onClick={handleSave}>Сохранить</button>
+        <button className='cancel-edit-button' onClick={onCancel}>Отмена</button>
       </div>
     </div>
   );

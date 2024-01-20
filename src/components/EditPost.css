@@ -1,0 +1,23 @@
+.save-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #2980b9;
+}
+
+.cancel-edit-button {
+  background-color: #db3434;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.cancel-edit-button:hover {
+  background-color: #cc3030;
+}
