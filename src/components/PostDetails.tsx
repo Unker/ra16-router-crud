@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { formatTimestamp } from '../utils/dateUtils';
 import './PostDetails.css';
 
 interface RouteParams {
@@ -12,7 +13,7 @@ interface Post {
   author: string;
   content: string;
   imageUrl: string;
-  createdAt: string;
+  created: string;
 }
 
 const PostDetails: React.FC = () => {
@@ -27,7 +28,14 @@ const PostDetails: React.FC = () => {
   }, [postId]);
 
   if (!post) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="post-details-container">
+        <h1>{`Просмотр карточки поста #${postId}`}</h1>
+        <div className="placeholder-post">
+          <p>Загрузка данных...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -37,8 +45,8 @@ const PostDetails: React.FC = () => {
       <div className="post-details">
         <p>{`Автор: ${post.author}`}</p>
         <p>{`ID: ${post.id}`}</p>
-        <p>{`Содержание: ${post.content}`}</p>
-        <p>{`Дата создания: ${post.createdAt}`}</p>
+        <p>{`Содержание: ${formatTimestamp(post.created)}`}</p>
+        <p>{`Дата создания: ${post.created}`}</p>
       </div>
     </div>
   );

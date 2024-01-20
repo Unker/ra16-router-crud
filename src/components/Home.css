@@ -3,12 +3,22 @@
   margin: auto;
 }
 
-.create-post-link {
-  display: block;
-  margin-bottom: 20px;
-  color: #3498db;
+.create-post-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-post-button:hover {
+  background-color: #2980b9;
+  color: #fff;
 }
 
 .post-list {
@@ -38,4 +48,13 @@
   color: #27ae60;
   text-decoration: none;
   font-weight: bold;
+}
+
+.placeholder-post {
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  margin: 20px 0;
+  color: #777;
 }

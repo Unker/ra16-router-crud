@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { formatTimestamp } from '../utils/dateUtils';
 import './Home.css';
 
 interface Post {
@@ -7,7 +8,7 @@ interface Post {
   author: string;
   content: string;
   imageUrl: string;
-  createdAt: string;
+  created: string;
 }
 
 const Home: React.FC = () => {
@@ -23,24 +24,30 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <h1>Главная страница</h1>
-      <Link to="/posts/new" className="create-post-link">
+      <Link to="/posts/new" className="create-post-button">
         Создать пост
       </Link>
       <div className="post-list">
-        {posts.map(post => (
-          <div key={post.id} className="post-card">
-            <img src={post.imageUrl} alt={`Post ${post.id}`} />
-            <div className="post-details">
-              <p>{`Автор: ${post.author}`}</p>
-              <p>{`ID: ${post.id}`}</p>
-              <p>{`Содержание: ${post.content}`}</p>
-              <p>{`Дата создания: ${post.createdAt}`}</p>
-              <Link to={`/posts/${post.id}`} className="view-post-link">
-                Просмотреть пост
-              </Link>
-            </div>
+        {posts.length === 0 ? (
+          <div className="placeholder-post">
+            <p>Здесь пока нет постов. Создайте свой первый пост!</p>
           </div>
-        ))}
+        ) : (
+          posts.map(post => (
+            <div key={post.id} className="post-card">
+              <img src={post.imageUrl} alt={`Post ${post.id}`} />
+              <div className="post-details">
+                <p>{`Автор: ${post.author}`}</p>
+                <p>{`ID: ${post.id}`}</p>
+                <p>{`Содержание: ${post.content}`}</p>
+                <p>{`Дата создания: ${formatTimestamp(post.created)}`}</p>
+                <Link to={`/posts/${post.id}`} className="view-post-link">
+                  Просмотреть пост
+                </Link>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
